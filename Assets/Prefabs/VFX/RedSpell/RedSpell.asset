@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba350f3b3f40110448a88b03458e865e, type: 3}
+  m_Name: RedSpell
+  m_EditorClassIdentifier: 
+  spellName: 'Spell of Fire '
+  spellIcon: {fileID: 21300000, guid: 705bb3e302730b74c8d8a853ba557865, type: 3}
+  particleSystem_Main: {fileID: 2012150403578971609, guid: 1550325f2f0e57346bc9ebc944a85444, type: 3}
+  particleSystem_Damage: {fileID: 8042859997040591690, guid: f717c39c397e91b4e8215aef5c900200, type: 3}
+  bulletPefab: {fileID: 1296346490930034438, guid: 6fe56c8acf2b73342b438f045ea09822, type: 3}
+  spellRing: {fileID: 0}
+  Damage: 25
+  fireRate: 3

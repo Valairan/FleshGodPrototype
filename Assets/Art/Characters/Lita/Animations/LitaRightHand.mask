@@ -1,0 +1,161 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LitaRightHand
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: clothingSet_04_body
+    m_Weight: 1
+  - m_Path: clothingSet_04_boots
+    m_Weight: 1
+  - m_Path: clothingSet_04_pants
+    m_Weight: 1
+  - m_Path: face
+    m_Weight: 1
+  - m_Path: girlBone_root
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_LeftUpLeg
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_LeftUpLeg/girlBone_LeftLeg
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_LeftUpLeg/girlBone_LeftLeg/girlBone_LeftFoot
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_LeftUpLeg/girlBone_LeftLeg/girlBone_LeftFoot/girlBone_LeftToeBase
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_LeftUpLeg/girlBone_LeftLeg/girlBone_LeftFoot/girlBone_LeftToeBase/girlBone_LeftToe_End
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_RightUpLeg
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_RightUpLeg/girlBone_RightLeg
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_RightUpLeg/girlBone_RightLeg/girlBone_RightFoot
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_RightUpLeg/girlBone_RightLeg/girlBone_RightFoot/girlBone_RightToeBase
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_RightUpLeg/girlBone_RightLeg/girlBone_RightFoot/girlBone_RightToeBase/girlBone_RightToe_End
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_LeftShoulder
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_LeftShoulder/girlBone_LeftArm
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_LeftShoulder/girlBone_LeftArm/girlBone_LeftForeArm
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_LeftShoulder/girlBone_LeftArm/girlBone_LeftForeArm/girlBone_LeftHand
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_LeftShoulder/girlBone_LeftArm/girlBone_LeftForeArm/girlBone_LeftHand/girlBone_LeftHandIndex1
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_LeftShoulder/girlBone_LeftArm/girlBone_LeftForeArm/girlBone_LeftHand/girlBone_LeftHandIndex1/girlBone_LeftHandIndex2
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_LeftShoulder/girlBone_LeftArm/girlBone_LeftForeArm/girlBone_LeftHand/girlBone_LeftHandIndex1/girlBone_LeftHandIndex2/girlBone_LeftHandIndex3
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_LeftShoulder/girlBone_LeftArm/girlBone_LeftForeArm/girlBone_LeftHand/girlBone_LeftHandIndex1/girlBone_LeftHandIndex2/girlBone_LeftHandIndex3/girlBone_LeftHandIndex4
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_LeftShoulder/girlBone_LeftArm/girlBone_LeftForeArm/girlBone_LeftHand/girlBone_LeftHandMiddle1
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_LeftShoulder/girlBone_LeftArm/girlBone_LeftForeArm/girlBone_LeftHand/girlBone_LeftHandMiddle1/girlBone_LeftHandMiddle2
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_LeftShoulder/girlBone_LeftArm/girlBone_LeftForeArm/girlBone_LeftHand/girlBone_LeftHandMiddle1/girlBone_LeftHandMiddle2/girlBone_LeftHandMiddle3
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_LeftShoulder/girlBone_LeftArm/girlBone_LeftForeArm/girlBone_LeftHand/girlBone_LeftHandMiddle1/girlBone_LeftHandMiddle2/girlBone_LeftHandMiddle3/girlBone_LeftHandMiddle4
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_LeftShoulder/girlBone_LeftArm/girlBone_LeftForeArm/girlBone_LeftHand/girlBone_LeftHandPinky1
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_LeftShoulder/girlBone_LeftArm/girlBone_LeftForeArm/girlBone_LeftHand/girlBone_LeftHandPinky1/girlBone_LeftHandPinky2
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_LeftShoulder/girlBone_LeftArm/girlBone_LeftForeArm/girlBone_LeftHand/girlBone_LeftHandPinky1/girlBone_LeftHandPinky2/girlBone_LeftHandPinky3
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_LeftShoulder/girlBone_LeftArm/girlBone_LeftForeArm/girlBone_LeftHand/girlBone_LeftHandPinky1/girlBone_LeftHandPinky2/girlBone_LeftHandPinky3/girlBone_LeftHandPinky4
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_LeftShoulder/girlBone_LeftArm/girlBone_LeftForeArm/girlBone_LeftHand/girlBone_LeftHandRing1
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_LeftShoulder/girlBone_LeftArm/girlBone_LeftForeArm/girlBone_LeftHand/girlBone_LeftHandRing1/girlBone_LeftHandRing2
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_LeftShoulder/girlBone_LeftArm/girlBone_LeftForeArm/girlBone_LeftHand/girlBone_LeftHandRing1/girlBone_LeftHandRing2/girlBone_LeftHandRing3
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_LeftShoulder/girlBone_LeftArm/girlBone_LeftForeArm/girlBone_LeftHand/girlBone_LeftHandRing1/girlBone_LeftHandRing2/girlBone_LeftHandRing3/girlBone_LeftHandRing4
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_LeftShoulder/girlBone_LeftArm/girlBone_LeftForeArm/girlBone_LeftHand/girlBone_LeftHandThumb1
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_LeftShoulder/girlBone_LeftArm/girlBone_LeftForeArm/girlBone_LeftHand/girlBone_LeftHandThumb1/girlBone_LeftHandThumb2
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_LeftShoulder/girlBone_LeftArm/girlBone_LeftForeArm/girlBone_LeftHand/girlBone_LeftHandThumb1/girlBone_LeftHandThumb2/girlBone_LeftHandThumb3
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_LeftShoulder/girlBone_LeftArm/girlBone_LeftForeArm/girlBone_LeftHand/girlBone_LeftHandThumb1/girlBone_LeftHandThumb2/girlBone_LeftHandThumb3/girlBone_LeftHandThumb4
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_Neck
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_Neck/girlBone_Head
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_Neck/girlBone_Head/girlBone_eyes
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_Neck/girlBone_Head/girlBone_eyes/girlBone_eyes_end
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_RightShoulder
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_RightShoulder/girlBone_RightArm
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_RightShoulder/girlBone_RightArm/girlBone_RightForeArm
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_RightShoulder/girlBone_RightArm/girlBone_RightForeArm/girlBone_RightHand
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_RightShoulder/girlBone_RightArm/girlBone_RightForeArm/girlBone_RightHand/girlBone_RightHandIndex1
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_RightShoulder/girlBone_RightArm/girlBone_RightForeArm/girlBone_RightHand/girlBone_RightHandIndex1/girlBone_RightHandIndex2
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_RightShoulder/girlBone_RightArm/girlBone_RightForeArm/girlBone_RightHand/girlBone_RightHandIndex1/girlBone_RightHandIndex2/girlBone_RightHandIndex3
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_RightShoulder/girlBone_RightArm/girlBone_RightForeArm/girlBone_RightHand/girlBone_RightHandIndex1/girlBone_RightHandIndex2/girlBone_RightHandIndex3/girlBone_RightHandIndex4
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_RightShoulder/girlBone_RightArm/girlBone_RightForeArm/girlBone_RightHand/girlBone_RightHandMiddle1
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_RightShoulder/girlBone_RightArm/girlBone_RightForeArm/girlBone_RightHand/girlBone_RightHandMiddle1/girlBone_RightHandMiddle2
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_RightShoulder/girlBone_RightArm/girlBone_RightForeArm/girlBone_RightHand/girlBone_RightHandMiddle1/girlBone_RightHandMiddle2/girlBone_RightHandMiddle3
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_RightShoulder/girlBone_RightArm/girlBone_RightForeArm/girlBone_RightHand/girlBone_RightHandMiddle1/girlBone_RightHandMiddle2/girlBone_RightHandMiddle3/girlBone_RightHandMiddle4
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_RightShoulder/girlBone_RightArm/girlBone_RightForeArm/girlBone_RightHand/girlBone_RightHandPinky1
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_RightShoulder/girlBone_RightArm/girlBone_RightForeArm/girlBone_RightHand/girlBone_RightHandPinky1/girlBone_RightHandPinky2
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_RightShoulder/girlBone_RightArm/girlBone_RightForeArm/girlBone_RightHand/girlBone_RightHandPinky1/girlBone_RightHandPinky2/girlBone_RightHandPinky3
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_RightShoulder/girlBone_RightArm/girlBone_RightForeArm/girlBone_RightHand/girlBone_RightHandPinky1/girlBone_RightHandPinky2/girlBone_RightHandPinky3/girlBone_RightHandPinky4
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_RightShoulder/girlBone_RightArm/girlBone_RightForeArm/girlBone_RightHand/girlBone_RightHandRing1
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_RightShoulder/girlBone_RightArm/girlBone_RightForeArm/girlBone_RightHand/girlBone_RightHandRing1/girlBone_RightHandRing2
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_RightShoulder/girlBone_RightArm/girlBone_RightForeArm/girlBone_RightHand/girlBone_RightHandRing1/girlBone_RightHandRing2/girlBone_RightHandRing3
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_RightShoulder/girlBone_RightArm/girlBone_RightForeArm/girlBone_RightHand/girlBone_RightHandRing1/girlBone_RightHandRing2/girlBone_RightHandRing3/girlBone_RightHandRing4
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_RightShoulder/girlBone_RightArm/girlBone_RightForeArm/girlBone_RightHand/girlBone_RightHandThumb1
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_RightShoulder/girlBone_RightArm/girlBone_RightForeArm/girlBone_RightHand/girlBone_RightHandThumb1/girlBone_RightHandThumb2
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_RightShoulder/girlBone_RightArm/girlBone_RightForeArm/girlBone_RightHand/girlBone_RightHandThumb1/girlBone_RightHandThumb2/girlBone_RightHandThumb3
+    m_Weight: 1
+  - m_Path: girlBone_root/girlBone_Hips/girlBone_Spine/girlBone_Spine1/girlBone_Spine2/girlBone_RightShoulder/girlBone_RightArm/girlBone_RightForeArm/girlBone_RightHand/girlBone_RightHandThumb1/girlBone_RightHandThumb2/girlBone_RightHandThumb3/girlBone_RightHandThumb4
+    m_Weight: 1
+  - m_Path: hair_01
+    m_Weight: 1
+  - m_Path: nacked_arms
+    m_Weight: 1
+  - m_Path: nacked_boots
+    m_Weight: 1
