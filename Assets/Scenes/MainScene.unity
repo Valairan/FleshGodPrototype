@@ -840,10 +840,10 @@ MonoBehaviour:
   seedlingCount: 5
   vertBloom1: 0
   vertBloom2: 0
-  MiniBloomPrefab: {fileID: 5612229600265586702, guid: 2bcd70e1950a360458fe1bfe8091158e, type: 3}
+  MiniBloomPrefab: {fileID: 49909533558799313, guid: d25864c3e5169a04fb9127ea5292ac59, type: 3}
   maxCount: 5
   minCount: 0
-  timeBetweenBloom: 5
+  timeBetweenBloom: 1
   vertBloom4: 0
   vertBloom5: 0
   vertBloom6: 0

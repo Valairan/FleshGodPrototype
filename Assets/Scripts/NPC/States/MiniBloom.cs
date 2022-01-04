@@ -7,8 +7,12 @@ public class MiniBloom : State
 	float countDown;
 	public override void onStateEnter(NPCBehaviourMachine stateMachine)
 	{
-		countDown = stateMachine.timeBetweenBloom;
- 	}
+ 		for (int i = 0; i < stateMachine.maxCount; i++)
+		{
+			GameObject.Instantiate(stateMachine.MiniBloomPrefab, stateMachine.grid.generateRandomCell(), Quaternion.identity).GetComponent<Seedling>().currentState = seedlingStates.miniBloom;
+
+		}
+	}
 
 	public override void onStateExit(NPCBehaviourMachine stateMachine)
 	{
@@ -23,12 +27,7 @@ public class MiniBloom : State
 		}
 		else
 		{
-			for (int i = 0; i < stateMachine.maxCount; i++)
-			{
-				GameObject.Instantiate(stateMachine.MiniBloomPrefab, stateMachine.grid.generateRandomCell(), Quaternion.identity);
-
-			}
-			stateMachine.transitionToState(stateMachine.idleState);
-		}
+			
+ 		}
  	}
 }

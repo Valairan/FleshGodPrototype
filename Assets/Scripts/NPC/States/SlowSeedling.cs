@@ -12,7 +12,7 @@ public class SlowSeedling : State
 		i = 0;
 		while (i < stateMachine.seedlingCount)
 		{
-			GameObject.Instantiate(stateMachine.seedlingPrefab, stateMachine.grid.generateRandomCell(), Quaternion.identity);
+			GameObject.Instantiate(stateMachine.seedlingPrefab, stateMachine.grid.generateRandomCell(), Quaternion.identity).GetComponent<Seedling>().currentState = seedlingStates.slowSeedling;
 			i++;
 		}
 		Debug.Log("Seedling");

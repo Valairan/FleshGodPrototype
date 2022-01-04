@@ -13,17 +13,15 @@ public class FullBloom : State
 		Debug.Log("Vertical Bloom");
 		foreach (Vector3 pos in positions)
 		{
-			GameObject.Instantiate(stateMachine.MiniBloomPrefab, pos, Quaternion.identity);
+			GameObject.Instantiate(stateMachine.MiniBloomPrefab, pos, Quaternion.identity).GetComponent<Seedling>().currentState = seedlingStates.fullBloom;
 		}
 	}
 
 	public override void onStateExit(NPCBehaviourMachine stateMachine)
 	{
-		throw new System.NotImplementedException();
-	}
+ 	}
 
 	public override void onStateUpdate(NPCBehaviourMachine stateMachine)
 	{
-		throw new System.NotImplementedException();
-	}
+ 	}
 }
