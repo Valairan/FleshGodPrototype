@@ -1,22 +1,37 @@
-using System.Collections;
-using System.Collections.Generic;
+// Seedling
 using UnityEngine;
 using UnityEngine.AI;
 
 public class Seedling : MonoBehaviour
 {
-	Transform player;
-	public seedlingStates currentState;
-	[SerializeField] NavMeshAgent agent;
-	[SerializeField] NavMeshObstacle wall;
-	[SerializeField] CapsuleCollider collider;
+	private Transform player;
 
-	float timer;
+	public seedlingStates currentState;
+
+	[SerializeField]
+	private NavMeshAgent agent;
+
+	[SerializeField]
+	private NavMeshObstacle wall;
+
+	[SerializeField]
+	private CapsuleCollider collider;
+
+	[SerializeField]
+	private Transform damageArea;
+
+	public float timer;
+
+	public float detonationRange;
+
+	private float damageHealth;
+
+	private float damageStamina;
 
 	private void Awake()
 	{
-		player = FindObjectOfType<Player>().transform;
-		timer = 2;
+		player = Object.FindObjectOfType<Player>().transform;
+		timer = 3f;
 	}
 
 	private void Start()
@@ -26,61 +41,121 @@ public class Seedling : MonoBehaviour
 			case seedlingStates.slowSeedling:
 				agent.enabled = true;
 				collider.enabled = true;
-				 break;
-			case seedlingStates.fleshExplosion: break;
-			case seedlingStates.bloodBloom: break;
-			case seedlingStates.miniBloom: wall.enabled = true; collider.enabled = true; break;
-			case seedlingStates.fullBloom: wall.enabled = true; collider.enabled = true; break;
-			case seedlingStates.horizontalBloom: wall.enabled = true; collider.enabled = true; break;
-			case seedlingStates.verticalBloom: wall.enabled = true; collider.enabled = true; break;
-
-			default: break;
+				damageHealth = 0f;
+				damageStamina = 20f;
+				break;
+			case seedlingStates.bloodBloom:
+				wall.enabled = true;
+				collider.enabled = true;
+				damageHealth = 0f;
+				damageStamina = 20f;
+				break;
+			case seedlingStates.miniBloom:
+				wall.enabled = true;
+				collider.enabled = true;
+				damageHealth = 0f;
+				damageStamina = 20f;
+				break;
+			case seedlingStates.fullBloom:
+				wall.enabled = true;
+				collider.enabled = true;
+				damageHealth = 0f;
+				damageStamina = 20f;
+				break;
+			case seedlingStates.horizontalBloom:
+				wall.enabled = true;
+				collider.enabled = true;
+				damageHealth = 0f;
+				damageStamina = 20f;
+				break;
+			case seedlingStates.verticalBloom:
+				wall.enabled = true;
+				collider.enabled = true;
+				damageHealth = 0f;
+				damageStamina = 20f;
+				break;
+			case seedlingStates.fleshExplosion:
+				break;
 		}
 	}
-	void Update()
-    {
+
+	private void Update()
+	{
 		switch (currentState)
 		{
-			case seedlingStates.slowSeedling: setNavmeshTarget(); break;
-			case seedlingStates.fleshExplosion: break;
-			case seedlingStates.bloodBloom: break;
-			case seedlingStates.miniBloom: break;
-			case seedlingStates.fullBloom: destroyAfter(); break;
-			case seedlingStates.horizontalBloom: destroyAfter(); break;
-			case seedlingStates.verticalBloom: destroyAfter(); break;
-
-			default: break;
+			case seedlingStates.slowSeedling:
+				setNavmeshTarget();
+				break;
+			case seedlingStates.bloodBloom:
+				bloodBloom();
+				break;
+			case seedlingStates.fullBloom:
+				destroyAfter();
+				break;
+			case seedlingStates.horizontalBloom:
+				destroyAfter();
+				break;
+			case seedlingStates.verticalBloom:
+				destroyAfter();
+				break;
+			case seedlingStates.fleshExplosion:
+			case seedlingStates.miniBloom:
+				break;
 		}
 	}
 
- 
-	void destroyAfter()
+	private void bloodBloom()
 	{
+		if (timer > 0f)
+		{
+			timer -= Time.deltaTime;
+			return;
+		}
+		damageArea.gameObject.SetActive(value: true);
+		if (Vector3.Distance(base.transform.position, player.position) < 3f)
+		{
+			player.GetComponent<Player>().takeDamage(100f, 0f);
+		}
+		Object.Destroy(base.gameObject);
+	}
 
-		if(timer > 0)
+	private void destroyAfter()
+	{
+		if (timer > 0f)
 		{
 			timer -= Time.deltaTime;
 		}
 		else
 		{
-			Destroy(this.gameObject);
+			Object.Destroy(base.gameObject);
 		}
 	}
-	void setNavmeshTarget()
+
+	private void setNavmeshTarget()
 	{
 		agent.SetDestination(player.position);
-
-		if (Vector3.Distance(player.position, transform.position) < 1f)
+		if (Vector3.Distance(player.position, base.transform.position) < 1f)
 		{
 			Debug.Log("Destroy");
-			Destroy(this.gameObject);
+			Object.Destroy(base.gameObject);
+		}
+	}
+
+	private void OnTriggerEnter(Collider other)
+	{
+		Debug.Log("Colliding with player");
+		if (other.gameObject.TryGetComponent<Player>(out var component))
+		{
+			component.takeDamage(0f, 0f);
 		}
 	}
 }
 
 
-public enum seedlingStates{
 
+// seedlingStates
+public enum seedlingStates
+{
 	slowSeedling,
 	fleshExplosion,
 	bloodBloom,
@@ -88,6 +163,4 @@ public enum seedlingStates{
 	fullBloom,
 	horizontalBloom,
 	verticalBloom
-
 }
-

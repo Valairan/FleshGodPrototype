@@ -1,25 +1,27 @@
-using System.Collections;
+// HorizontalBloom
 using System.Collections.Generic;
 using UnityEngine;
 
 public class HorizontalBloom : State
 {
-	List<Vector3> positions;
-	int index = 0;
-	float countDown = 2;
+	private List<Vector3> positions;
+
+	private int index;
+
+	private float countDown = 2f;
+
 	public override void onStateEnter(NPCBehaviourMachine stateMachine)
 	{
 		positions = stateMachine.grid.generateRandomRow();
 		Debug.Log("Vertical Bloom");
-		foreach (Vector3 pos in positions)
+		foreach (Vector3 position in positions)
 		{
-			GameObject.Instantiate(stateMachine.MiniBloomPrefab, pos, Quaternion.identity).GetComponent<Seedling>().currentState = seedlingStates.horizontalBloom;
+			Object.Instantiate(stateMachine.MiniBloomPrefab, position, Quaternion.identity).GetComponent<Seedling>().currentState = seedlingStates.horizontalBloom;
 		}
 	}
 
 	public override void onStateExit(NPCBehaviourMachine stateMachine)
 	{
-
 	}
 
 	public override void onStateUpdate(NPCBehaviourMachine stateMachine)
@@ -30,8 +32,7 @@ public class HorizontalBloom : State
 		}
 		else
 		{
-			countDown = 2;
-
+			countDown = 2f;
 		}
 	}
 }

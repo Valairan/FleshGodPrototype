@@ -1,6 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+// NPCBehaviourMachine
 using UnityEngine;
 
 public class NPCBehaviourMachine : MonoBehaviour
@@ -8,72 +6,98 @@ public class NPCBehaviourMachine : MonoBehaviour
 	public Grid grid;
 
 	public State currentState;
+
 	public State idleState = new IdleState();
+
 	public State slowSeedling = new SlowSeedling();
+
 	public State verticalBloom = new VerticalBloom();
+
 	public State horizontalBloom = new HorizontalBloom();
+
 	public State MiniBloom = new MiniBloom();
+
 	public State fullBloom = new FullBloom();
+
 	public State fleshExplosion = new FleshExplosion();
+
 	public State bloodBloom = new BloodBloom();
 
 	public State[] listofStates;
+
 	[Header("State Machine Settings")]
-	[SerializeField] float switchStateTime;
-	[SerializeField] float currentTime;
-	[SerializeField] public Player player;
+	[SerializeField]
+	private float switchStateTime;
+
+	[SerializeField]
+	private float currentTime;
+
+	[SerializeField]
+	public Player player;
 
 	[Header("Slow Seedling Settings")]
 	public GameObject seedlingPrefab;
+
 	public float seedlingSpeed;
+
 	public int seedlingCount;
 
 	[Header("Vertical Bloom Settings")]
 	public float vertBloom1;
+
 	[Header("Horizontal Bloom Settings")]
 	public float vertBloom2;
+
 	[Header("Mini Bloom Settings")]
 	public GameObject MiniBloomPrefab;
+
 	public int maxCount;
+
 	public int minCount;
+
 	public float timeBetweenBloom;
+
 	[Header("Full Bloom Settings")]
 	public float vertBloom4;
+
 	[Header("Flesh Explosion Settings")]
 	public float vertBloom5;
+
 	[Header("Blood Bloom Settings")]
-	public float vertBloom6;
+	public int seedCount;
+
+	public float detonationMaxTime;
+
+	public float detonationMinTime;
+
+	public float damageRadius;
 
 	private void Awake()
 	{
 		currentState = idleState;
-
 	}
 
 	private void Start()
 	{
- 		listofStates = new State[]{slowSeedling, verticalBloom, horizontalBloom, MiniBloom, fullBloom};
- 	}
+		listofStates = new State[5] { slowSeedling, verticalBloom, horizontalBloom, MiniBloom, fullBloom };
+	}
 
 	private void Update()
 	{
-		if(currentTime > 0f)
+		if (currentTime > 0f)
 		{
 			currentTime -= Time.deltaTime;
+			return;
 		}
-		else
-		{
-			currentTime = switchStateTime;
-			transitionToState(listofStates[UnityEngine.Random.Range(0, listofStates.Length)]);
-		}
-
+		currentTime = switchStateTime;
+		transitionToState(listofStates[Random.Range(0, listofStates.Length)]);
 	}
 
 	private void randomlyChangeState()
 	{
-		if (currentTime <= 0)
+		if (currentTime <= 0f)
 		{
-			transitionToState(listofStates[UnityEngine.Random.Range(0, 8)]);
+			transitionToState(listofStates[Random.Range(0, 8)]);
 			currentTime = switchStateTime;
 		}
 	}
@@ -87,8 +111,6 @@ public class NPCBehaviourMachine : MonoBehaviour
 
 	public State randomStateGenerator()
 	{
-		return listofStates[UnityEngine.Random.Range(0, 8)];
+		return listofStates[Random.Range(0, 8)];
 	}
-
-
 }

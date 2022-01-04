@@ -6,16 +6,19 @@ public class BloodBloom : State
 {
 	public override void onStateEnter(NPCBehaviourMachine stateMachine)
 	{
-		throw new System.NotImplementedException();
+		for (int i = 0; i < stateMachine.maxCount; i++)
+		{
+			Seedling component = Object.Instantiate(stateMachine.MiniBloomPrefab, stateMachine.grid.generateRandomCell(), Quaternion.identity).GetComponent<Seedling>();
+			component.currentState = seedlingStates.miniBloom;
+			component.timer = Random.Range(stateMachine.detonationMinTime, stateMachine.detonationMaxTime);
+		}
 	}
 
 	public override void onStateExit(NPCBehaviourMachine stateMachine)
 	{
-		throw new System.NotImplementedException();
 	}
 
 	public override void onStateUpdate(NPCBehaviourMachine stateMachine)
 	{
-		throw new System.NotImplementedException();
 	}
 }
