@@ -52,7 +52,7 @@ public class NPCBehaviourMachine : MonoBehaviour
 
 	private void Start()
 	{
- 		listofStates = new State[]{slowSeedling, verticalBloom, horizontalBloom, MiniBloom};
+ 		listofStates = new State[]{slowSeedling, verticalBloom, horizontalBloom, MiniBloom, fullBloom};
  	}
 
 	private void Update()
@@ -64,7 +64,7 @@ public class NPCBehaviourMachine : MonoBehaviour
 		else
 		{
 			currentTime = switchStateTime;
-			transitionToState(listofStates[UnityEngine.Random.Range(0, 4)]);
+			transitionToState(listofStates[UnityEngine.Random.Range(0, listofStates.Length)]);
 		}
 
 	}
