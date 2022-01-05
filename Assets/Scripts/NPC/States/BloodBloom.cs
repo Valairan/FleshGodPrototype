@@ -8,7 +8,7 @@ public class BloodBloom : State
 	{
 		for (int i = 0; i < stateMachine.maxCount; i++)
 		{
-			Seedling component = Object.Instantiate(stateMachine.MiniBloomPrefab, stateMachine.grid.generateRandomCell(), Quaternion.identity).GetComponent<Seedling>();
+			Seedling component = Object.Instantiate(stateMachine.seedlingPrefab, stateMachine.grid.generateRandomCell(), Quaternion.identity).GetComponent<Seedling>();
 			component.currentState = seedlingStates.miniBloom;
 			component.timer = Random.Range(stateMachine.detonationMinTime, stateMachine.detonationMaxTime);
 		}

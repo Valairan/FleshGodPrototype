@@ -13,7 +13,7 @@ public class VerticalBloom : State
 		Debug.Log("Vertical Bloom");
 		foreach (Vector3 pos in positions)
 		{
-			GameObject.Instantiate(stateMachine.MiniBloomPrefab, pos, Quaternion.identity).GetComponent<Seedling>().currentState = seedlingStates.verticalBloom;
+			GameObject.Instantiate(stateMachine.seedlingPrefab, pos, Quaternion.identity).GetComponent<Seedling>().currentState = seedlingStates.verticalBloom;
 		}
 	}
 

@@ -35,41 +35,27 @@ public class NPCBehaviourMachine : MonoBehaviour
 	[SerializeField]
 	public Player player;
 
-	[Header("Slow Seedling Settings")]
 	public GameObject seedlingPrefab;
+
+	[Header("Slow Seedling Settings")]
 
 	public float seedlingSpeed;
 
 	public int seedlingCount;
 
 	[Header("Vertical Bloom Settings")]
-	public float vertBloom1;
-
 	[Header("Horizontal Bloom Settings")]
-	public float vertBloom2;
-
 	[Header("Mini Bloom Settings")]
-	public GameObject MiniBloomPrefab;
-
 	public int maxCount;
-
 	public int minCount;
-
 	public float timeBetweenBloom;
 
 	[Header("Full Bloom Settings")]
-	public float vertBloom4;
-
 	[Header("Flesh Explosion Settings")]
-	public float vertBloom5;
-
 	[Header("Blood Bloom Settings")]
 	public int seedCount;
-
 	public float detonationMaxTime;
-
 	public float detonationMinTime;
-
 	public float damageRadius;
 
 	private void Awake()

@@ -9,7 +9,7 @@ public class MiniBloom : State
 	{
 		for (int i = 0; i < stateMachine.maxCount; i++)
 		{
-			Object.Instantiate(stateMachine.MiniBloomPrefab, stateMachine.grid.generateRandomCell(), Quaternion.identity).GetComponent<Seedling>().currentState = seedlingStates.miniBloom;
+			Object.Instantiate(stateMachine.seedlingPrefab, stateMachine.grid.generateRandomCell(), Quaternion.identity).GetComponent<Seedling>().currentState = seedlingStates.miniBloom;
 		}
 	}
 
