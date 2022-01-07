@@ -32,7 +32,12 @@ public class UIHandler : MonoBehaviour
 
 	public void mainMenuLoader()
 	{
-		SceneManager.LoadScene(2);
+		SceneManager.LoadScene(0);
+	}
+
+	public void loadMainScene()
+	{
+		SceneManager.LoadScene(1);
 	}
 
 }

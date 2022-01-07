@@ -61,12 +61,12 @@ public class NPCBehaviourMachine : MonoBehaviour
 
 	private void Awake()
 	{
-		currentState = idleState;
+		currentState = bloodBloom;
 	}
 
 	private void Start()
 	{
-		listofStates = new State[5] { slowSeedling, verticalBloom, horizontalBloom, MiniBloom, fullBloom };
+		listofStates = new State[6] { slowSeedling, verticalBloom, horizontalBloom, MiniBloom, fullBloom, bloodBloom};
 	}
 
 	private void Update()
@@ -74,10 +74,14 @@ public class NPCBehaviourMachine : MonoBehaviour
 		if (currentTime > 0f)
 		{
 			currentTime -= Time.deltaTime;
-			return;
+
 		}
-		currentTime = switchStateTime;
-		transitionToState(listofStates[Random.Range(0, listofStates.Length)]);
+		else
+		{
+			currentTime = switchStateTime;
+			transitionToState(listofStates[Random.Range(0, listofStates.Length)]);
+
+		}
 	}
 
 	private void randomlyChangeState()

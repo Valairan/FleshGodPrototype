@@ -16,6 +16,7 @@ public class BloodBloom : State
 
 	public override void onStateExit(NPCBehaviourMachine stateMachine)
 	{
+		
 	}
 
 	public override void onStateUpdate(NPCBehaviourMachine stateMachine)

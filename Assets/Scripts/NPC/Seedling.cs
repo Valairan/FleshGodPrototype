@@ -20,6 +20,9 @@ public class Seedling : MonoBehaviour
 	[SerializeField]
 	private Transform damageArea;
 
+	[SerializeField]
+	private ParticleSystem explosion;
+
 	public float timer;
 
 	public float detonationRange;
@@ -28,7 +31,9 @@ public class Seedling : MonoBehaviour
 
 	private float damageStamina;
 
-	private float staminaCountdown;
+	private float staminaCountdown = 5;
+
+
 
 	private void Awake()
 	{
@@ -62,19 +67,19 @@ public class Seedling : MonoBehaviour
 			case seedlingStates.fullBloom:
 				wall.enabled = true;
 				collider.enabled = true;
-				damageHealth = 0f;
+				damageHealth = 100f;
 				damageStamina = 1f;
 				break;
 			case seedlingStates.horizontalBloom:
 				wall.enabled = true;
 				collider.enabled = true;
-				damageHealth = 0f;
+				damageHealth = 100f;
 				damageStamina = 1f;
 				break;
 			case seedlingStates.verticalBloom:
 				wall.enabled = true;
 				collider.enabled = true;
-				damageHealth = 0f;
+				damageHealth = 100f;
 				damageStamina = 1f;
 				break;
 			case seedlingStates.fleshExplosion:
@@ -120,14 +125,18 @@ public class Seedling : MonoBehaviour
 		if (timer > 0f)
 		{
 			timer -= Time.deltaTime;
-			return;
 		}
-		damageArea.gameObject.SetActive(value: true);
-		if (Vector3.Distance(base.transform.position, player.position) < 3f)
+		else
 		{
-			player.GetComponent<Player>().takeDamage(100f, 0f, staminaCountdown);
+			damageArea.gameObject.SetActive(true);
+			if (Vector3.Distance(base.transform.position, player.position) < 2f)
+			{
+				player.GetComponent<Player>().takeDamage(100f, 0f, staminaCountdown);
+			}
+			explosion.Play();
+			Object.Destroy(base.gameObject);
 		}
-		Object.Destroy(base.gameObject);
+
 	}
 
 	private void destroyAfter()

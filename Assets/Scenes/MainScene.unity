@@ -3410,7 +3410,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &231256609
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12423,7 +12423,7 @@ MonoBehaviour:
   switchStateTime: 5
   currentTime: 0
   player: {fileID: 936955412}
-  seedlingPrefab: {fileID: 49909533558799313, guid: d25864c3e5169a04fb9127ea5292ac59, type: 3}
+  seedlingPrefab: {fileID: 8801214093964993943, guid: 0c7376ea1180d594995905417a1c234e, type: 3}
   dangerIndicator: {fileID: 0}
   seedlingSpeed: 1
   seedlingCount: 5
@@ -15188,80 +15188,6 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0e30f20a5be90054abb6faa693f1906f, type: 3}
   m_PrefabInstance: {fileID: 754477869}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &990814499
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1898791887}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 89d09e5f6fc073840af3be2c0c72ef5c, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 89d09e5f6fc073840af3be2c0c72ef5c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 89d09e5f6fc073840af3be2c0c72ef5c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 89d09e5f6fc073840af3be2c0c72ef5c, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 89d09e5f6fc073840af3be2c0c72ef5c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 89d09e5f6fc073840af3be2c0c72ef5c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 89d09e5f6fc073840af3be2c0c72ef5c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 89d09e5f6fc073840af3be2c0c72ef5c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 89d09e5f6fc073840af3be2c0c72ef5c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 89d09e5f6fc073840af3be2c0c72ef5c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 89d09e5f6fc073840af3be2c0c72ef5c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 89d09e5f6fc073840af3be2c0c72ef5c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 89d09e5f6fc073840af3be2c0c72ef5c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 89d09e5f6fc073840af3be2c0c72ef5c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 89d09e5f6fc073840af3be2c0c72ef5c, type: 3}
-      propertyPath: m_Name
-      value: MonsterPlantv23
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 89d09e5f6fc073840af3be2c0c72ef5c, type: 3}
---- !u!4 &990814500 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 89d09e5f6fc073840af3be2c0c72ef5c, type: 3}
-  m_PrefabInstance: {fileID: 990814499}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1012692662
 PrefabInstance:
@@ -23795,7 +23721,7 @@ MonoBehaviour:
   healthBar_Canvas: {fileID: 1086470783}
   staminaBar_Canvas: {fileID: 2120064074}
   crossHair_Canvas: {fileID: 925243849}
-  gameOverScreen: {fileID: 0}
+  gameOverScreen: {fileID: 231256608}
 --- !u!1001 &1515632562
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29496,38 +29422,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5bed9773c538fe449856d777fe160ff2, type: 3}
   m_PrefabInstance: {fileID: 1897772183}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1898791886
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1898791887}
-  m_Layer: 0
-  m_Name: EnemyPrefab
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1898791887
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1898791886}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 990814500}
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1906562895
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32056,13 +31950,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1512744732}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1512744737}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: mainMenuLoader
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
