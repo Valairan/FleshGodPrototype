@@ -14,7 +14,7 @@ public class Grid : MonoBehaviour
 	}
 	public Vector3 generateRandomCell()
 	{
-		Vector3 coords = new Vector3((int)Random.Range(-horizontalSize / 2, horizontalSize / 2), 0, (int)Random.Range(-verticalSize / 2, verticalSize / 2));
+		Vector3 coords = new Vector3((int)Random.Range(-horizontalSize / 2, horizontalSize / 2), -3+Random.Range(0f, 1f), (int)Random.Range(-verticalSize / 2, verticalSize / 2));
 		if (!OccupiedCells.Contains(coords))
 		{
 			OccupiedCells.Add(coords);
@@ -33,7 +33,7 @@ public class Grid : MonoBehaviour
 		int index = (int)Random.Range(-verticalSize / 2, verticalSize / 2);
 		for (int i = -horizontalSize / 2; i <= horizontalSize / 2; i += 1)
 		{
-			positions.Add(new Vector3(i, 0, index));
+			positions.Add(new Vector3(i, -3 + Random.Range(0f, 1f), index));
 		}
 
 		return positions;
@@ -44,7 +44,7 @@ public class Grid : MonoBehaviour
 		int index = (int)Random.Range(-verticalSize / 2, verticalSize / 2);
 		for (int i = -verticalSize / 2  ; i <= verticalSize / 2; i += 1)
 		{
-			positions.Add(new Vector3(index, 0, i));
+			positions.Add(new Vector3(index, -3 + Random.Range(0f, 1f), i));
 		}
 
 		return positions;
@@ -61,7 +61,7 @@ public class Grid : MonoBehaviour
 				{
 					for (int i = 0; i <= verticalSize / 2; i++)
 					{
-						positions.Add(new Vector3(j, 0, i));
+						positions.Add(new Vector3(j, -3 + Random.Range(0f, 1f), i));
 					}
 				}
 				break;
@@ -70,7 +70,7 @@ public class Grid : MonoBehaviour
 				{
 					for (int i = -verticalSize / 2; i <= 0; i += 1)
 					{
-						positions.Add(new Vector3(j, 0, i));
+						positions.Add(new Vector3(j, -3 + Random.Range(0f, 1f), i));
 					}
 				}
 				break;
@@ -79,7 +79,7 @@ public class Grid : MonoBehaviour
 				{
 					for (int i = 0; i <= verticalSize / 2; i++)
 					{
-						positions.Add(new Vector3(j, 0, i));
+						positions.Add(new Vector3(j, -3 + Random.Range(0f, 1f), i));
 					}
 				}
 				break;
@@ -88,7 +88,7 @@ public class Grid : MonoBehaviour
 				{
 					for (int i = -verticalSize / 2; i <= 0; i += 1)
 					{
-						positions.Add(new Vector3(j, 0,i));
+						positions.Add(new Vector3(j, -3 + Random.Range(0f, 1f), i));
 					}
 				}
 				break;
@@ -97,7 +97,7 @@ public class Grid : MonoBehaviour
 				{
 					for (int i = 0; i <= verticalSize / 2; i++)
 					{
-						positions.Add(new Vector3(j, 0, i));
+						positions.Add(new Vector3(j, -3 + Random.Range(0f, 1f), i));
 					}
 				}
 				break;

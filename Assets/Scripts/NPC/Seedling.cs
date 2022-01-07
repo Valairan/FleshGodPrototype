@@ -28,6 +28,8 @@ public class Seedling : MonoBehaviour
 
 	private float damageStamina;
 
+	private float staminaCountdown;
+
 	private void Awake()
 	{
 		player = Object.FindObjectOfType<Player>().transform;
@@ -42,37 +44,38 @@ public class Seedling : MonoBehaviour
 				agent.enabled = true;
 				collider.enabled = true;
 				damageHealth = 0f;
-				damageStamina = 20f;
+				damageStamina = 1f;
 				break;
 			case seedlingStates.bloodBloom:
 				wall.enabled = true;
 				collider.enabled = true;
 				damageHealth = 0f;
-				damageStamina = 20f;
+				damageStamina = 1f;
 				break;
 			case seedlingStates.miniBloom:
 				wall.enabled = true;
 				collider.enabled = true;
+				collider.isTrigger = false;
 				damageHealth = 0f;
-				damageStamina = 20f;
+				damageStamina = 1f;
 				break;
 			case seedlingStates.fullBloom:
 				wall.enabled = true;
 				collider.enabled = true;
 				damageHealth = 0f;
-				damageStamina = 20f;
+				damageStamina = 1f;
 				break;
 			case seedlingStates.horizontalBloom:
 				wall.enabled = true;
 				collider.enabled = true;
 				damageHealth = 0f;
-				damageStamina = 20f;
+				damageStamina = 1f;
 				break;
 			case seedlingStates.verticalBloom:
 				wall.enabled = true;
 				collider.enabled = true;
 				damageHealth = 0f;
-				damageStamina = 20f;
+				damageStamina = 1f;
 				break;
 			case seedlingStates.fleshExplosion:
 				break;
@@ -102,7 +105,15 @@ public class Seedling : MonoBehaviour
 			case seedlingStates.miniBloom:
 				break;
 		}
+
+		moveUpwards();
 	}
+
+	public void moveUpwards()
+	{
+		transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, 0, transform.position.z), .1f);
+	}
+
 
 	private void bloodBloom()
 	{
@@ -114,7 +125,7 @@ public class Seedling : MonoBehaviour
 		damageArea.gameObject.SetActive(value: true);
 		if (Vector3.Distance(base.transform.position, player.position) < 3f)
 		{
-			player.GetComponent<Player>().takeDamage(100f, 0f);
+			player.GetComponent<Player>().takeDamage(100f, 0f, staminaCountdown);
 		}
 		Object.Destroy(base.gameObject);
 	}
@@ -134,10 +145,11 @@ public class Seedling : MonoBehaviour
 	private void setNavmeshTarget()
 	{
 		agent.SetDestination(player.position);
-		if (Vector3.Distance(player.position, base.transform.position) < 1f)
+		if (Vector3.Distance(player.position, base.transform.position) < .5f)
 		{
 			Debug.Log("Destroy");
 			Object.Destroy(base.gameObject);
+			player.GetComponent<Player>().takeDamage(damageHealth, damageStamina, staminaCountdown);
 		}
 	}
 
@@ -146,7 +158,7 @@ public class Seedling : MonoBehaviour
 		Debug.Log("Colliding with player");
 		if (other.gameObject.TryGetComponent<Player>(out var component))
 		{
-			component.takeDamage(0f, 0f);
+			component.takeDamage(damageHealth, damageStamina, staminaCountdown);
 		}
 	}
 }

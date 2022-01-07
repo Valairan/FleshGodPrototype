@@ -36,6 +36,7 @@ public class NPCBehaviourMachine : MonoBehaviour
 	public Player player;
 
 	public GameObject seedlingPrefab;
+	public GameObject dangerIndicator;
 
 	[Header("Slow Seedling Settings")]
 

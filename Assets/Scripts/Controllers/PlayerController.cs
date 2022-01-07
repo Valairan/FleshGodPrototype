@@ -184,18 +184,22 @@ public class PlayerController : MonoBehaviour
 
 	private void OnDrawGizmos()
 	{
-		RaycastHit hit;
-		if (Physics.Raycast(inputs.camera.position, inputs.camera.forward, out hit))
+		if (inputs.camera)
 		{
-			Vector3 aimtTarget = hit.point;
-			Gizmos.DrawSphere(aimtTarget, 1f);
-			Gizmos.DrawLine(inputs.camera.position, aimtTarget);
-		}
-		else
-		{
-			Vector3 aimtTarget = inputs.camera.position + inputs.camera.forward * 100;
-			Gizmos.DrawSphere(aimtTarget, 1f);
-			Gizmos.DrawLine(inputs.camera.position, inputs.camera.position + inputs.camera.forward * 100);
+			RaycastHit hit;
+			if (Physics.Raycast(inputs.camera.position, inputs.camera.forward, out hit))
+			{
+				Vector3 aimtTarget = hit.point;
+				Gizmos.DrawSphere(aimtTarget, 1f);
+				Gizmos.DrawLine(inputs.camera.position, aimtTarget);
+			}
+			else
+			{
+				Vector3 aimtTarget = inputs.camera.position + inputs.camera.forward * 100;
+				Gizmos.DrawSphere(aimtTarget, 1f);
+				Gizmos.DrawLine(inputs.camera.position, inputs.camera.position + inputs.camera.forward * 100);
+
+			}
 
 		}
 	}
