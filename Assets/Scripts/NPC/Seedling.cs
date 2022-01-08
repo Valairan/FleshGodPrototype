@@ -175,16 +175,14 @@ public class Seedling : MonoBehaviour
 		agent.SetDestination(player.position);
 		if (Vector3.Distance(player.position, base.transform.position) < .5f)
 		{
-			Debug.Log("Destroy");
-			Object.Destroy(base.gameObject);
+ 			Object.Destroy(base.gameObject);
 			player.GetComponent<Player>().takeDamage(damageHealth, damageStamina, staminaCountdown);
 		}
 	}
 
 	private void OnTriggerEnter(Collider other)
 	{
-		Debug.Log("Colliding with player");
-		if (other.gameObject.TryGetComponent<Player>(out var component))
+ 		if (other.gameObject.TryGetComponent<Player>(out var component))
 		{
 			component.takeDamage(damageHealth, damageStamina, staminaCountdown);
 		}

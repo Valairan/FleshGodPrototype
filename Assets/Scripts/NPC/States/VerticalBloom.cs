@@ -8,10 +8,12 @@ public class VerticalBloom : State
 
 	private int index;
 
-	private float countDown = 5f;
+	private float countDown;
 
 	public override void onStateEnter(NPCBehaviourMachine stateMachine)
 	{
+		countDown = 5f;
+		positions = new List<Vector3>();
 		positions = stateMachine.grid.generateRandomColumn();
 		Debug.Log("Vertical Bloom");
 		foreach (Vector3 position in positions)

@@ -12,6 +12,8 @@ public class FullBloom : State
 
 	public override void onStateEnter(NPCBehaviourMachine stateMachine)
 	{
+		countDown = 5f;
+		positions = new List<Vector3>();
 		positions = stateMachine.grid.generateRandomQuadrant();
 		foreach (Vector3 position in positions)
 		{
@@ -37,6 +39,5 @@ public class FullBloom : State
 		else
 			countDown -= Time.deltaTime;
 
-		Debug.Log(countDown);
 	}
 }

@@ -12429,7 +12429,6 @@ MonoBehaviour:
   seedlingCount: 5
   maxCount: 5
   minCount: 0
-  timeBetweenBloom: 1
   seedCount: 0
   detonationMaxTime: 0
   detonationMinTime: 0

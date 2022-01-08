@@ -10,6 +10,8 @@ public class BloodBloom : State
 	private float countDown = 5f;
 	public override void onStateEnter(NPCBehaviourMachine stateMachine)
 	{
+		countDown = 5f;
+		positions = new List<Vector3>();
 		Debug.Log("Blood Bloom");
 
 		for (int i = 0; i < stateMachine.maxCount; i++)

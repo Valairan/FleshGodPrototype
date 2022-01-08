@@ -7,13 +7,14 @@ public class SlowSeedling : State
 {
 
 	private int index;
-	private List<Vector3> positions =  new List<Vector3>();
+	private List<Vector3> positions = new List<Vector3>();
 
-	private float countDown = 5f;
+	private float countDown;
 	public override void onStateEnter(NPCBehaviourMachine stateMachine)
 	{
 		Debug.Log("Slow Seedling");
-
+		positions = new List<Vector3>();
+		countDown = 5f;
 		for (int i = 0; i < stateMachine.maxCount; i++)
 		{
 			Vector3 position = stateMachine.grid.generateRandomCell();

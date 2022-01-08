@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class MiniBloom : State
 {
-	
-	private float countDown = 5f;
+
+	private float countDown;
 	private List<Vector3> positions = new List<Vector3>();
 
 	public override void onStateEnter(NPCBehaviourMachine stateMachine)
 	{
 		Debug.Log("Mini Bloom");
-
+		countDown = 5f;
+		positions = new List<Vector3>();
 		for (int i = 0; i < stateMachine.maxCount; i++)
 		{
 			Vector3 position = stateMachine.grid.generateRandomCell();

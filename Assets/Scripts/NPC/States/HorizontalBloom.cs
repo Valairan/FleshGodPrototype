@@ -13,10 +13,10 @@ public class HorizontalBloom : State
 	public override void onStateEnter(NPCBehaviourMachine stateMachine)
 	{
 		Debug.Log("Hor Bloom");
-
+		positions = new List<Vector3>();
+		countDown = 5f;
 		positions = stateMachine.grid.generateRandomRow();
-		Debug.Log("Vertical Bloom");
-		foreach (Vector3 position in positions)
+ 		foreach (Vector3 position in positions)
 		{
 			Object.Instantiate(stateMachine.seedlingPrefab, new Vector3(position.x, 0, position.z), Quaternion.identity).GetComponent<Seedling>().currentState = seedlingStates.damagePrefab;
 		}
