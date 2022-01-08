@@ -8,35 +8,55 @@ public class VerticalBloom : State
 
 	private int index;
 
-	private float countDown;
-
+	private float countDown1 = 3f;
+	private float countDown2 = 2f;
+	private bool isFinishedInstantiating = false;
 	public override void onStateEnter(NPCBehaviourMachine stateMachine)
 	{
-		countDown = 5f;
+		countDown1 = stateMachine.delayAfterIndicator;
+		countDown2 = stateMachine.delayBetweenStates;
 		positions = new List<Vector3>();
 		positions = stateMachine.grid.generateRandomColumn();
-		Debug.Log("Vertical Bloom");
 		foreach (Vector3 position in positions)
 		{
 			Object.Instantiate(stateMachine.seedlingPrefab, new Vector3(position.x, 0, position.z), Quaternion.identity).GetComponent<Seedling>().currentState = seedlingStates.damagePrefab;
 		}
+
 	}
 
 	public override void onStateExit(NPCBehaviourMachine stateMachine)
 	{
-		foreach (Vector3 position in positions)
-		{
-			Object.Instantiate(stateMachine.seedlingPrefab, position, Quaternion.identity).GetComponent<Seedling>().currentState = seedlingStates.verticalBloom;
-		}
+
 	}
 
 	public override void onStateUpdate(NPCBehaviourMachine stateMachine)
 	{
-		if (countDown <= 0f)
+		if (countDown1 <= 0f)
 		{
-			stateMachine.transitionToState(stateMachine.randomStateGenerator());
+			//Instantiate
+			if (!isFinishedInstantiating)
+			{
+				foreach (Vector3 position in positions)
+				{
+					Object.Instantiate(stateMachine.seedlingPrefab, position, Quaternion.identity).GetComponent<Seedling>().currentState = seedlingStates.verticalBloom;
+				}
+				isFinishedInstantiating = true;
+			}
+			if (countDown2 <= 0f)
+			{
+				//Transition to different state
+				stateMachine.transitionToState(stateMachine.randomStateGenerator());
+
+			}
+			else
+			{
+				countDown2 -= Time.deltaTime;
+			}
 		}
 		else
-			countDown -= Time.deltaTime;
+			countDown1 -= Time.deltaTime;
+
+
+
 	}
 }

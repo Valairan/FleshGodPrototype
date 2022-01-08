@@ -28,6 +28,13 @@ public class NPCBehaviourMachine : MonoBehaviour
 	[Header("State Machine Settings")]
 	[SerializeField]
 	private float switchStateTime;
+	[SerializeField]
+	[Tooltip("Time between the indicator and the enemy instantiation")]
+	public float delayAfterIndicator = 2f;
+	[SerializeField]
+	[Tooltip("Time to transition to next state after instantiating enemy")]
+	public float delayBetweenStates = 3f;
+
 
 	[SerializeField]
 	private float currentTime;

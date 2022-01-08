@@ -70,6 +70,7 @@ public class Seedling : MonoBehaviour
 				damageStamina = 1f;
 				break;
 			case seedlingStates.bloodBloom:
+				damageArea.gameObject.SetActive(true);
 				wall.enabled = true;
 				collider.enabled = true;
 				damageHealth = 0f;

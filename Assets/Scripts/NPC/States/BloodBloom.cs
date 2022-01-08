@@ -1,44 +1,66 @@
-using System.Collections;
+// FullBloom
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BloodBloom : State
 {
-	private int index;
 	private List<Vector3> positions = new List<Vector3>();
 
-	private float countDown = 5f;
+	private int index;
+
+	private float countDown1 = 3f;
+	private float countDown2 = 2f;
+	private bool isFinishedInstantiating = false;
 	public override void onStateEnter(NPCBehaviourMachine stateMachine)
 	{
-		countDown = 5f;
+		countDown1 = stateMachine.delayAfterIndicator;
+		countDown2 = stateMachine.delayBetweenStates;
 		positions = new List<Vector3>();
-		Debug.Log("Blood Bloom");
-
 		for (int i = 0; i < stateMachine.maxCount; i++)
 		{
 			Vector3 position = stateMachine.grid.generateRandomCell();
-			positions.Add(position); 
+			positions.Add(position);
 			position.y = 0;
 			GameObject.Instantiate(stateMachine.seedlingPrefab, position, Quaternion.identity).GetComponent<Seedling>().currentState = seedlingStates.damagePrefab;
 		}
+
 	}
 
 	public override void onStateExit(NPCBehaviourMachine stateMachine)
 	{
-		foreach (Vector3 pos in positions)
-		{
-			GameObject.Instantiate(stateMachine.seedlingPrefab, pos, Quaternion.identity).GetComponent<Seedling>().currentState = seedlingStates.bloodBloom;
 
-		}
 	}
 
 	public override void onStateUpdate(NPCBehaviourMachine stateMachine)
 	{
-		if (countDown <= 0f)
+		if (countDown1 <= 0f)
 		{
-			stateMachine.transitionToState(stateMachine.randomStateGenerator());
+			//Instantiate
+			if (!isFinishedInstantiating)
+			{
+				foreach (Vector3 position in positions)
+				{
+					Object.Instantiate(stateMachine.seedlingPrefab, position, Quaternion.identity).GetComponent<Seedling>().currentState = seedlingStates.bloodBloom;
+				}
+				isFinishedInstantiating = true;
+			}
+			if (countDown2 <= 0f)
+			{
+				//Transition to different state
+				stateMachine.transitionToState(stateMachine.randomStateGenerator());
+
+			}
+			else
+			{
+				countDown2 -= Time.deltaTime;
+			}
 		}
 		else
-			countDown -= Time.deltaTime;
+			countDown1 -= Time.deltaTime;
+
+
+
 	}
+
+
 }

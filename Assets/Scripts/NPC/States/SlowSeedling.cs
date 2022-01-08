@@ -5,16 +5,18 @@ using UnityEngine.AI;
 
 public class SlowSeedling : State
 {
-
-	private int index;
 	private List<Vector3> positions = new List<Vector3>();
 
-	private float countDown;
+	private int index;
+
+	private float countDown1 = 3f;
+	private float countDown2 = 2f;
+	private bool isFinishedInstantiating = false;
 	public override void onStateEnter(NPCBehaviourMachine stateMachine)
 	{
-		Debug.Log("Slow Seedling");
+		countDown1 = stateMachine.delayAfterIndicator;
+		countDown2 = stateMachine.delayBetweenStates;
 		positions = new List<Vector3>();
-		countDown = 5f;
 		for (int i = 0; i < stateMachine.maxCount; i++)
 		{
 			Vector3 position = stateMachine.grid.generateRandomCell();
@@ -22,24 +24,42 @@ public class SlowSeedling : State
 			position.y = 0;
 			GameObject.Instantiate(stateMachine.seedlingPrefab, position, Quaternion.identity).GetComponent<Seedling>().currentState = seedlingStates.damagePrefab;
 		}
+
 	}
 
 	public override void onStateExit(NPCBehaviourMachine stateMachine)
 	{
-		foreach (Vector3 pos in positions)
-		{
-			GameObject.Instantiate(stateMachine.seedlingPrefab, pos, Quaternion.identity).GetComponent<Seedling>().currentState = seedlingStates.slowSeedling;
 
-		}
 	}
 
 	public override void onStateUpdate(NPCBehaviourMachine stateMachine)
 	{
-		if (countDown <= 0f)
+		if (countDown1 <= 0f)
 		{
-			stateMachine.transitionToState(stateMachine.randomStateGenerator());
+			//Instantiate
+			if (!isFinishedInstantiating)
+			{
+				foreach (Vector3 position in positions)
+				{
+					Object.Instantiate(stateMachine.seedlingPrefab, position, Quaternion.identity).GetComponent<Seedling>().currentState = seedlingStates.slowSeedling;
+				}
+				isFinishedInstantiating = true;
+			}
+			if (countDown2 <= 0f)
+			{
+				//Transition to different state
+				stateMachine.transitionToState(stateMachine.randomStateGenerator());
+
+			}
+			else
+			{
+				countDown2 -= Time.deltaTime;
+			}
 		}
 		else
-			countDown -= Time.deltaTime;
+			countDown1 -= Time.deltaTime;
+
+
+
 	}
 }

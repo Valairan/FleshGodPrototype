@@ -12421,6 +12421,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grid: {fileID: 262273958}
   switchStateTime: 5
+  delayAfterIndicator: 2
+  delayBetweenStates: 3
   currentTime: 0
   player: {fileID: 936955412}
   seedlingPrefab: {fileID: 8801214093964993943, guid: 0c7376ea1180d594995905417a1c234e, type: 3}
