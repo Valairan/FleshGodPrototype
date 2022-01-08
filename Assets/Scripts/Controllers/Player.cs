@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
 	{
 		Health -= health;
 		Stamina -= stamina;
-		stamina = Mathf.Clamp(stamina,0.5f, 2f);
+		Stamina = Mathf.Clamp(Stamina,0.5f, 2f);
 		staminaCountDown = howLong;
 
 	}
@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
 		else
 		{
 			Stamina = 2;
+
 		}
 
 		if(Health <= 0f)

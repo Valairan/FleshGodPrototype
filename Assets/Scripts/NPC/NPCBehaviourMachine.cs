@@ -49,7 +49,6 @@ public class NPCBehaviourMachine : MonoBehaviour
 	[Header("Mini Bloom Settings")]
 	public int maxCount;
 	public int minCount;
-	public float timeBetweenBloom;
 
 	[Header("Full Bloom Settings")]
 	[Header("Flesh Explosion Settings")]
@@ -61,37 +60,19 @@ public class NPCBehaviourMachine : MonoBehaviour
 
 	private void Awake()
 	{
-		currentState = bloodBloom;
+		currentState = idleState;
 	}
 
 	private void Start()
 	{
 		listofStates = new State[6] { slowSeedling, verticalBloom, horizontalBloom, MiniBloom, fullBloom, bloodBloom};
+		transitionToState(randomStateGenerator());
 	}
 
 	private void Update()
 	{
-		if (currentTime > 0f)
-		{
-			currentTime -= Time.deltaTime;
-
-		}
-		else
-		{
-			currentTime = switchStateTime;
-			transitionToState(listofStates[Random.Range(0, listofStates.Length)]);
-
-		}
-	}
-
-	private void randomlyChangeState()
-	{
-		if (currentTime <= 0f)
-		{
-			transitionToState(listofStates[Random.Range(0, 8)]);
-			currentTime = switchStateTime;
-		}
-	}
+		currentState.onStateUpdate(this);
+ 	}
 
 	public void transitionToState(State nextState)
 	{
@@ -102,6 +83,6 @@ public class NPCBehaviourMachine : MonoBehaviour
 
 	public State randomStateGenerator()
 	{
-		return listofStates[Random.Range(0, 8)];
+		return listofStates[Random.Range(0, listofStates.Length)];
 	}
 }

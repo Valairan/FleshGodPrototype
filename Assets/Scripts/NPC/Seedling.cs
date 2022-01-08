@@ -1,12 +1,30 @@
 // Seedling
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class Seedling : MonoBehaviour
 {
+	IEnumerator SpriteCoroutine(SpriteRenderer renderer, float duration)
+	{
+		// Fading animation
+		float start = Time.time;
+		while (Time.time <= start + duration)
+		{
+			Color color = renderer.color;
+			color.a = 1f - Mathf.Clamp01((Time.time - start) / duration);
+			renderer.color = color;
+			yield return new WaitForEndOfFrame();
+		}
+		Destroy(this.gameObject);
+	}
+
 	private Transform player;
+	public SpriteRenderer damageIndicator;
 
 	public seedlingStates currentState;
+	[SerializeField] 
+	private Transform graphic;
 
 	[SerializeField]
 	private NavMeshAgent agent;
@@ -67,23 +85,24 @@ public class Seedling : MonoBehaviour
 			case seedlingStates.fullBloom:
 				wall.enabled = true;
 				collider.enabled = true;
-				damageHealth = 100f;
+				damageHealth = 10f;
 				damageStamina = 1f;
 				break;
 			case seedlingStates.horizontalBloom:
 				wall.enabled = true;
 				collider.enabled = true;
-				damageHealth = 100f;
+				damageHealth = 10f;
 				damageStamina = 1f;
 				break;
 			case seedlingStates.verticalBloom:
 				wall.enabled = true;
 				collider.enabled = true;
-				damageHealth = 100f;
+				damageHealth = 10f;
 				damageStamina = 1f;
 				break;
-			case seedlingStates.fleshExplosion:
-				break;
+			case seedlingStates.fleshExplosion:break;
+			case seedlingStates.damagePrefab: damageIndicator.gameObject.SetActive(true); StartCoroutine(SpriteCoroutine(damageIndicator, 2f)); graphic.gameObject.SetActive(false); break;
+
 		}
 	}
 
@@ -106,12 +125,12 @@ public class Seedling : MonoBehaviour
 			case seedlingStates.verticalBloom:
 				destroyAfter();
 				break;
-			case seedlingStates.fleshExplosion:
+			case seedlingStates.fleshExplosion:break;
 			case seedlingStates.miniBloom:
 				break;
-		}
-
-		moveUpwards();
+			}
+		if(!currentState.Equals(seedlingStates.damagePrefab))
+			moveUpwards();
 	}
 
 	public void moveUpwards()
@@ -131,7 +150,7 @@ public class Seedling : MonoBehaviour
 			damageArea.gameObject.SetActive(true);
 			if (Vector3.Distance(base.transform.position, player.position) < 2f)
 			{
-				player.GetComponent<Player>().takeDamage(100f, 0f, staminaCountdown);
+				player.GetComponent<Player>().takeDamage(50f, 0f, staminaCountdown);
 			}
 			explosion.Play();
 			Object.Destroy(base.gameObject);
@@ -183,5 +202,6 @@ public enum seedlingStates
 	miniBloom,
 	fullBloom,
 	horizontalBloom,
-	verticalBloom
+	verticalBloom,
+	damagePrefab
 }

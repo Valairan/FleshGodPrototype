@@ -1,27 +1,42 @@
 // MiniBloom
+using System.Collections.Generic;
 using UnityEngine;
 
 public class MiniBloom : State
 {
-	private float countDown;
+	
+	private float countDown = 5f;
+	private List<Vector3> positions = new List<Vector3>();
 
 	public override void onStateEnter(NPCBehaviourMachine stateMachine)
 	{
+		Debug.Log("Mini Bloom");
+
 		for (int i = 0; i < stateMachine.maxCount; i++)
 		{
-			Object.Instantiate(stateMachine.seedlingPrefab, stateMachine.grid.generateRandomCell(), Quaternion.identity).GetComponent<Seedling>().currentState = seedlingStates.miniBloom;
+			Vector3 position = stateMachine.grid.generateRandomCell();
+			positions.Add(position);
+			position.y = 0;
+			GameObject.Instantiate(stateMachine.seedlingPrefab, position, Quaternion.identity).GetComponent<Seedling>().currentState = seedlingStates.damagePrefab;
 		}
 	}
 
 	public override void onStateExit(NPCBehaviourMachine stateMachine)
 	{
+		foreach (Vector3 pos in positions)
+		{
+			GameObject.Instantiate(stateMachine.seedlingPrefab, pos, Quaternion.identity).GetComponent<Seedling>().currentState = seedlingStates.miniBloom;
+
+		}
 	}
 
 	public override void onStateUpdate(NPCBehaviourMachine stateMachine)
 	{
-		if (countDown > 0f)
+		if (countDown <= 0f)
 		{
-			countDown -= Time.deltaTime;
+			stateMachine.transitionToState(stateMachine.randomStateGenerator());
 		}
+		else
+			countDown -= Time.deltaTime;
 	}
 }
