@@ -15,6 +15,7 @@ public class BloodBloom : State
 	{
 		countDown1 = stateMachine.delayAfterIndicator;
 		countDown2 = stateMachine.delayBetweenStates;
+		isFinishedInstantiating = false;
 		positions = new List<Vector3>();
 		for (int i = 0; i < stateMachine.maxCount; i++)
 		{

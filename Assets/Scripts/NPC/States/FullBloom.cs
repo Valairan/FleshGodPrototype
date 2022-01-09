@@ -15,6 +15,7 @@ public class FullBloom : State
 	{
 		countDown1 = stateMachine.delayAfterIndicator;
 		countDown2 = stateMachine.delayBetweenStates;
+		isFinishedInstantiating = false;
 		positions = new List<Vector3>();
 		positions = stateMachine.grid.generateRandomQuadrant();
 		foreach (Vector3 position in positions)

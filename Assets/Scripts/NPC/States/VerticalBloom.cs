@@ -15,6 +15,7 @@ public class VerticalBloom : State
 	{
 		countDown1 = stateMachine.delayAfterIndicator;
 		countDown2 = stateMachine.delayBetweenStates;
+		isFinishedInstantiating = false;
 		positions = new List<Vector3>();
 		positions = stateMachine.grid.generateRandomColumn();
 		foreach (Vector3 position in positions)
